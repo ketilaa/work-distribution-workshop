@@ -80,7 +80,7 @@ public interface IWorkDistributor
 {
     Task StartAsync(CancellationToken cancellationToken);
     Task EnqueueWorkAsync(IWorkItem workItem);
-    void CompleteAdding();
+    void AllWorkAdded();
 }
 ```
 
@@ -197,7 +197,7 @@ public async Task ShouldRetryAndCompleteAllWork()
             TargetSize: ImageSize.Thumbnail));
     }
 
-    distributor.CompleteAdding();
+    distributor.AllWorkAdded();
     await distributorTask;
 
     // Assert
