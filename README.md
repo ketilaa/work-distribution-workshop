@@ -100,21 +100,19 @@ You should see output showing workers processing tasks, with some failures occur
 ```
 distributed-workload-coordination/
 ├── README.md                          # This file
+├── Core/
+│   ├── IWorkItem.cs                   # Interface for work items
+│   ├── IWorker.cs                     # Interface for workers
+│   ├── IWorkDistributor.cs            # Interface for work distribution
+│   ├── IWorkTracker.cs                # Interface for tracking work status
+│   ├── IDeadLetterQueue.cs            # Interface for failed work (introduced later)
+|   └── WorkTracker.cs                 # Work tracker implementation
 ├── Workshop1/
 │   ├── README.md                      # Workshop 1 instructions
-│   ├── Workshop1.csproj
-│   ├── Interfaces/
-│   │   ├── IWorkItem.cs
-│   │   ├── IWorker.cs
-│   │   ├── IWorkDistributor.cs
-│   │   └── IWorkTracker.cs
-│   ├── Implementations/
-│   │   ├── ImageWorkItem.cs
-│   │   ├── ImageWorker.cs
-│   │   ├── NaiveWorkDistributor.cs
-│   │   └── WorkTracker.cs
-│   └── Tests/
-│       └── WorkDistributorTests.cs
+│   ├── ImageWorkItem.cs               # Concrete work item for image processing
+│   ├── ImageWorker.cs                 # Worker that simulates image processing
+│   ├── NaiveWorkDistributor.cs        # Basic distributor without retry logic
+│   └── Workshop1Tests.cs              # Unit tests
 ├── Workshop2/
 │   └── README.md                      # Coming soon
 ├── Workshop3/
