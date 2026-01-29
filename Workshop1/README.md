@@ -184,7 +184,7 @@ public async Task ShouldRetryAndCompleteAllWork()
         .Select(i => new ImageWorker($"Worker-{i}"))
         .ToList<IWorker>();
     
-    var distributor = new ImprovedWorkDistributor(workers, tracker, maxRetries: 3);
+    var distributor = new ImprovedWorkDistributor(workers, tracker, maxRetries: 3); // you will implement ImprovedWorkDistributor
 
     // Act
     var distributorTask = distributor.StartAsync(CancellationToken.None);
