@@ -171,8 +171,7 @@ Failed items are retried with increasing delays between attempts.
 - More complex to implement
 - Requires separate retry handling mechanism
 
-Great idea! Using collapsible sections in Markdown is perfect for progressive hints. Here's how to add a hints section to the Workshop1 README:
-markdown## Hints and Solutions
+## Hints and Solutions
 
 If you get stuck during the workshop, expand these sections for progressive hints. Try to work through each hint before moving to the next one!
 
